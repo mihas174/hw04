@@ -1,5 +1,5 @@
 # hw04
-Пишу скрипт для VM nfss
+Добавляю в скрипт для VM nfss - nfss_script.sh
 
 Заколовок:
 >#!/bin/bash 
@@ -42,3 +42,9 @@
 
 Актуализация изменений в nfs:
 >exportfs -r
+
+
+В скрипт nfsc_script.sh строку для автомонтирования расшаренной папки:
+
+>#!/bin/bash
+>192.168.50.10:/usr/local/nfs    /mnt   nfs    rsize=8192,wsize=8192,rw,sync > /etc/fstab
