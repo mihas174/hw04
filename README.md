@@ -1,13 +1,13 @@
 # hw04
 Пишу скрипт для VM nfss
+
 Заколовок:
 >#!/bin/bash 
 
-Установка nfs-utils
-
+Установка nfs-utils:
 >yum install -y nfs-utils
 
-Создание папки nfs
+Создание папки nfs:
 
 >mkdir /usr/local/nfs
 
@@ -28,7 +28,7 @@
 Включение NFS v3:
 >sed -i 's/# # vers3=y/vers3=y/g' /etc/nfs.conf
 
-Запуск и установка в автозагрузку nfs и firewall
+Запуск и установка в автозагрузку nfs и firewall:
 >systemctl enable nfs 
 >systemctl start nfs
 >systemctl enable firewalld
