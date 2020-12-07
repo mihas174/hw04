@@ -10,8 +10,9 @@ systemctl enable nfs
 systemctl start nfs
 systemctl enable firewalld
 systemctl start firewalld
-firewall-cmd --permanent --zone=public --add-service=nfs
-firewall-cmd --permanent --zone=public --add-service=mountd
-firewall-cmd --permanent --zone=public --add-service=rpc-bind
+firewall-cmd --zone=public --permanent --add-port=111/tcp
+firewall-cmd --zone=public --permanent --add-port=111/udp
+firewall-cmd --zone=public --permanent --add-port=2049/tcp
+firewall-cmd --zone=public --permanent --add-port=2049/udp
 firewall-cmd --reload
 exportfs -r
